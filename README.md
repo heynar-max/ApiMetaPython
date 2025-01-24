@@ -11,3 +11,6 @@ deactivate
 
 instalar flask
 pip install flask
+
+para subirmlo debe tener requiremets, estando en el entorno virtual para subir lo necesario
+pip freeze > requirements.txt

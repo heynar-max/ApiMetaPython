@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import json
+import http.client
 
 app = Flask(__name__)
 
@@ -100,6 +101,53 @@ def recibir_mensajes(req):
         return jsonify({'message':'EVENT_RECEIVED'})
     except Exception as e:
         return jsonify({'message':'EVENT_RECEIVED'})
+    
+
+#funcion de la logica de los mensajes
+def enviar_mensajes_whatsapp(texto,number):
+    texto = texto.lower()
+
+    if "hola" in texto:
+        data={
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "🚀 Hola, ¿Cómo estás? Bienvenido."
+            }
+        }
+    else:
+        data={
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "🚀 Hola, visita mi web anderson-bastidas.com para más información.\n \n📌Por favor, ingresa un número #️⃣ para recibir información.\n \n1️⃣. Información del Curso. ❔\n2️⃣. Ubicación del local. 📍\n3️⃣. Enviar temario en PDF. 📄\n4️⃣. Audio explicando curso. 🎧\n5️⃣. Video de Introducción. ⏯️\n6️⃣. Hablar con AnderCode. 🙋‍♂️\n7️⃣. Horario de Atención. 🕜 \n0️⃣. Regresar al Menú. 🕜"
+            }
+        }
+
+    #Convertir el diccionaria a formato JSON    
+    data=json.dumps(data)
+
+    headers = {
+        "Content-Type" : "application/json",
+        "Authorization" : "Bearer EAAImrVwLfJkBOZCXczhMlwNmZCrIhAjQYzHYSTmKjA237fCn0waycndFFjl9GSrkFojWAhAgCyQjoh1AxPL9DoIqeMVr0Dkyvopo0uSZAbKItrAgviY76YmdCtpq1EjmRzYmPHO3o9r4vI5oZA4VU0BFhE4aZBRZAHwOi3INFmmjhnLWj0x9Aa11qrEpGS0jQIZAP5nnFwoyQ0ecx3Uj1g504DpE7oZD"
+    }
+
+    connection = http.client.HTTPSConnection("graph.facebook.com")
+
+    try:
+        connection.request("POST","/v21.0/591402320714042/messages", data, headers)
+        response = connection.getresponse()
+        print(response.status, response.reason)
+    except Exception as e:
+        agregar_mensajes_log(json.dumps(e))
+    finally:
+        connection.close()
 
 if __name__=="__main__":
     app.run(host='0.0.0.0',port=80,debug=True)

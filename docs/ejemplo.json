@@ -1,0 +1,39 @@
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "488750437664226",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15551423071",
+                            "phone_number_id": "591402320714042"
+                        },
+                        "contacts": [
+                            {
+                                "profile": {
+                                    "name": "Heynar Soto Holguin"
+                                },
+                                "wa_id": "573014010278"
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "from": "573014010278",
+                                "id": "wamid.HBgMNTczMDE0MDEwMjc4FQIAEhggOUNEODc0QUY2NjM2MjZCNEU1Q0QxMUVDQkE0RTlEQjIA",
+                                "timestamp": "1737772951",
+                                "text": {
+                                    "body": "Hola"
+                                },
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}

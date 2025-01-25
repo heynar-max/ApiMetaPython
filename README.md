@@ -14,3 +14,6 @@ pip install flask
 
 para subirmlo debe tener requiremets, estando en el entorno virtual para subir lo necesario
 pip freeze > requirements.txt
+
+para que funcione los log se instala
+ pip install flask-sqlalchemy

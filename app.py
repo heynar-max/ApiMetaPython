@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
+import json
 
 app = Flask(__name__)
 
@@ -39,8 +39,11 @@ mensajes_log = []
 def agregar_mensajes_log(texto):
     mensajes_log.append(texto)
     
-    #Guardar el mensaje en la base de datos
-    nuevo_registro = Log(texto=texto)
+    # Convertir el dict a una cadena JSON
+    texto_json = json.dumps(texto, ensure_ascii=False)
+
+    # Guardar el mensaje en la base de datos
+    nuevo_registro = Log(texto=texto_json)
     db.session.add(nuevo_registro)
     db.session.commit()
 
@@ -70,6 +73,7 @@ def verificar_token(req):
 def recibir_mensajes(req):
     req = request.get_json()
     agregar_mensajes_log(req)
+
     return jsonify({'message':'EVENT_RECEIVED'})
 
 if __name__=="__main__":

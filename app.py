@@ -96,7 +96,7 @@ def recibir_mensajes(req):
                         numero = messages["from"]
 
                         enviar_mensajes_whatsapp(text,numero)
-                        
+
                     elif tipo_interactivo == "list_reply":
                         text = messages["interactive"]["list_reply"]["id"]
                         numero = messages["from"]
@@ -379,7 +379,7 @@ def enviar_mensajes_whatsapp(texto,number):
 
     headers = {
         "Content-Type" : "application/json",
-        "Authorization" : "Bearer EAAImrVwLfJkBOZCXczhMlwNmZCrIhAjQYzHYSTmKjA237fCn0waycndFFjl9GSrkFojWAhAgCyQjoh1AxPL9DoIqeMVr0Dkyvopo0uSZAbKItrAgviY76YmdCtpq1EjmRzYmPHO3o9r4vI5oZA4VU0BFhE4aZBRZAHwOi3INFmmjhnLWj0x9Aa11qrEpGS0jQIZAP5nnFwoyQ0ecx3Uj1g504DpE7oZD"
+        "Authorization" : "Bearer EAAImrVwLfJkBOyfUaS6XSoOaYUZCulmbDjzmrs6awxFSFzfIlYNfkH3N8obcXoozvDOb3O5Q57OXXELba4xdSfczkugUCZCJrtyL8izGLQ0o726xqERgqTZAY4CR4jT7P2AY4LJosJsnEZB8Syp3cxjnws7griAgsXSHLuW1c4wwg51Odz5yTewhNtZAhWhCRYwZDZD"
     }
 
     connection = http.client.HTTPSConnection("graph.facebook.com")

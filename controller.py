@@ -3,7 +3,7 @@ from service import generar_respuesta
 import json
 import http.client
 from model import Log
-from db import db
+from app import db
 
 
 webhook = Blueprint('webhook', __name__)

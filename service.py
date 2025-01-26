@@ -1,5 +1,5 @@
 from model import Log
-from db import db
+
 
 def generar_respuesta(texto, number):
     

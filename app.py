@@ -27,7 +27,6 @@ def index():
     registros_ordenados = ordenar_por_fecha_y_hora(registros)
     return render_template('index.html',registros=registros_ordenados)
 
-mensajes_log = []
 
 # Registrar rutas del controlador
 app.register_blueprint(webhook)

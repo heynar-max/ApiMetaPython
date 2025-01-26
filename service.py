@@ -7,6 +7,8 @@ from app import mensajes_log
 
 TOKEN_HESODOKS = "HESODOKS"
 
+mensajes_log = []
+
 def agregar_mensajes_log(texto):
     mensajes_log.append(texto)
     texto_json = json.dumps(texto, ensure_ascii=False)

@@ -1,7 +1,7 @@
 import json
 import http.client
 from model import Log
-from app import db
+from db import db
 from flask import request, jsonify
 
 TOKEN_HESODOKS = "HESODOKS"

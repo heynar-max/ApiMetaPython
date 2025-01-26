@@ -1,5 +1,4 @@
-
-from app import db
+from db import db
 from datetime import datetime
 
 class Log(db.Model):

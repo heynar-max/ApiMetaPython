@@ -9,4 +9,3 @@ def webhook_handler():
         return verificar_token(request)
     elif request.method == 'POST':
         return recibir_mensajes(request)
-    

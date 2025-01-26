@@ -3,14 +3,10 @@ import http.client
 from model import Log
 from db import db
 from flask import request, jsonify
-from app import mensajes_log
 
 TOKEN_HESODOKS = "HESODOKS"
 
-mensajes_log = []
-
 def agregar_mensajes_log(texto):
-    mensajes_log.append(texto)
     texto_json = json.dumps(texto, ensure_ascii=False)
     nuevo_registro = Log(texto=texto_json)
     db.session.add(nuevo_registro)

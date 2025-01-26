@@ -81,10 +81,11 @@ def enviar_mensajes_whatsapp(texto, number):
         connection.close()
 
 def generar_respuesta(texto, number):
+    
     texto = texto.lower()
 
     if "hola" in texto:
-        data={
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -95,7 +96,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "1" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -106,7 +107,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "2" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "to": number,
             "type": "location",
@@ -118,7 +119,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "3" in texto:
-        data={
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -129,7 +130,7 @@ def generar_respuesta(texto, number):
                 }
             }
     elif "4" in texto:
-        data={
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -139,7 +140,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "5" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "to": number,
             "text": {
@@ -148,7 +149,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "6" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -159,7 +160,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "7" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -170,7 +171,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "0" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -181,7 +182,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "boton" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -220,7 +221,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "btnsi" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -231,7 +232,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "btnno" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -242,7 +243,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "btntalvez" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -253,7 +254,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "lista" in texto:
-        data ={
+        return {
             "messaging_product": "whatsapp",
             "to": number,
             "type": "interactive",
@@ -302,7 +303,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "btncompra" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -313,7 +314,7 @@ def generar_respuesta(texto, number):
             }
         }
     elif "btnvender" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -324,7 +325,7 @@ def generar_respuesta(texto, number):
             }
         }
     else:
-        data={
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,

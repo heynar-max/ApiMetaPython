@@ -3,6 +3,10 @@
 crear entorno virtual
 pip install virtualenv
 
+para crear la carpeta
+virtualenv venv
+
+
 para activar el venv
 source venv/Scripts/activate
 

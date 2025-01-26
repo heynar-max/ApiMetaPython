@@ -1,4 +1,3 @@
-from model import Log
 
 
 def generar_respuesta(texto, number):

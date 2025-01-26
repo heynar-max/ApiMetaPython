@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from controller import webhook
 
+
 app = Flask(__name__)
 
 # Configuración de la base de datos

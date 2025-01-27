@@ -1,4 +1,31 @@
 def apiregiones(texto, number):
+
+    if "btnamazonia" in texto:
+        # Llamar a la función ApiRegiones o devolver el mensaje correspondiente
+        return apiregiones(texto, number)
+        
+    elif "btnandina" in texto:
+        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+        return apiflora(texto, number)
+    
+    elif "btncaribe" in texto:
+        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+        return apiflora(texto, number)
+    
+    elif "btninsular" in texto:
+        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+        return apiflora(texto, number)
+    
+    elif "btnorinoquia" in texto:
+        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+        return apiflora(texto, number)
+    
+    elif "btnpacifica" in texto:
+        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+        return apiflora(texto, number)
+    
+    
+    
     return {
         "messaging_product": "whatsapp",
         "recipient_type": "individual",
@@ -21,12 +48,32 @@ def apiregiones(texto, number):
                             {
                                 "id": "btnamazonia",
                                 "title": "Región Amazónica",
-                                "description": "Con mayor biodiversidad del planeta, ubicada al sur del país."
+                                "description": "Región Amazónica."
                             },
                             {
                                 "id": "btnandina",
                                 "title": "Región Andina",
-                                "description": "Una de las regiones más pobladas, Se encuentra en el centro del país."
+                                "description": "Región Andina."
+                            },
+                            {
+                                "id": "btncaribe",
+                                "title": "Región Caribe",
+                                "description": "Región Caribe."
+                            },
+                            {
+                                "id": "btninsular",
+                                "title": "Región Insular",
+                                "description": "Región Insular."
+                            },
+                            {
+                                "id": "btnorinoquia",
+                                "title": "Región Orinoquia",
+                                "description": "Región Orinoquia."
+                            },
+                            {
+                                "id": "btnpacifica",
+                                "title": "Región Pacifica",
+                                "description": "Región Pacifica."
                             },
                         ]
                     },
@@ -44,3 +91,4 @@ def apiregiones(texto, number):
             }
         }
     }
+    

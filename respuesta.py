@@ -1,5 +1,5 @@
-from flora import ApiFlora
-from regiones import ApiRegiones
+from flora.ApiFlora import ApiFlora
+from regiones.ApiRegiones import ApiRegiones
 
 
 def generar_respuesta(texto, number):

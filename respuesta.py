@@ -40,11 +40,9 @@ def generar_respuesta(texto, number):
         }
     elif "btnsi" in texto:
         # Llamar a la función ApiRegiones o devolver el mensaje correspondiente
-        return {
-            apiregiones(texto, number)
-        }
+        return apiregiones(texto, number)
+        
     elif "btnno" in texto:
         # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return {
-            apiflora(texto, number)
-        }
+        return apiflora(texto, number)
+        

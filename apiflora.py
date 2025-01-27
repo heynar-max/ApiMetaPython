@@ -1,4 +1,4 @@
-def apiregiones(texto, number):
+def apiflora(texto, number):
     return {
         "messaging_product": "whatsapp",
         "to": number,

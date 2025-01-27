@@ -1,28 +1,31 @@
+from regiones import amazonasregion
+
+
 def apiregiones(texto, number):
 
     if "btnamazonia" in texto:
         # Llamar a la función ApiRegiones o devolver el mensaje correspondiente
-        return apiregiones(texto, number)
+        return amazonasregion(texto, number)
         
     elif "btnandina" in texto:
         # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return apiflora(texto, number)
+        return amazonasregion(texto, number)
     
     elif "btncaribe" in texto:
         # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return apiflora(texto, number)
+        return amazonasregion(texto, number)
     
     elif "btninsular" in texto:
         # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return apiflora(texto, number)
+        return amazonasregion(texto, number)
     
     elif "btnorinoquia" in texto:
         # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return apiflora(texto, number)
+        return amazonasregion(texto, number)
     
     elif "btnpacifica" in texto:
         # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return apiflora(texto, number)
+        return amazonasregion(texto, number)
     
     
     

@@ -1,5 +1,5 @@
-from flora.ApiFlora import ApiFlora
-from regiones.ApiRegiones import ApiRegiones
+from flora import apiflora
+from regiones import apiregiones
 
 
 def generar_respuesta(texto, number):
@@ -41,10 +41,10 @@ def generar_respuesta(texto, number):
     elif "btnsi" in texto:
         # Llamar a la función ApiRegiones o devolver el mensaje correspondiente
         return {
-            ApiRegiones(texto, number)
+            apiregiones(texto, number)
         }
     elif "btnno" in texto:
         # Llamar a la función ApiFlora o devolver el mensaje correspondiente
         return {
-            ApiFlora(texto, number)
+            apiflora(texto, number)
         }

@@ -1,4 +1,10 @@
 def amazonasregion(texto, number):
+    # Imprimir el valor de texto para depuración
+    print(f"Texto recibido: {texto}")
+    
+    # Normalizar el valor de texto por si contiene espacios adicionales
+    texto = texto.strip().lower()  # Quita espacios y lo convierte en minúsculas
+    
     if texto == "btnamazonia":
         data = {
             "messaging_product": "whatsapp",

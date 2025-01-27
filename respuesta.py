@@ -1,10 +1,6 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Importar la función apiflora desde el módulo flora.apiflora
-from flora.apiflora import apiflora
-from regiones.apiregiones import apiregiones
+from apiflora import apiflora
+from apiregiones import apiregiones
 
 
 def generar_respuesta(texto, number):

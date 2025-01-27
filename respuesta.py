@@ -1,7 +1,7 @@
 
 
-import apiflora
-import apiregiones
+from apiflora import apiflora
+from apiregiones import apiregiones
 
 
 def generar_respuesta(texto, number):

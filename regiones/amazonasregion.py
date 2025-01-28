@@ -1,6 +1,7 @@
 def amazonasregion(texto, number):
+    
     if  "btnamazonia" in texto:
-        data = {
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -13,7 +14,7 @@ def amazonasregion(texto, number):
             }
         }
     elif  "1" in texto:
-        data = {
+        return  {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -24,7 +25,7 @@ def amazonasregion(texto, number):
             }
         }
     elif  "2" in texto:
-        data = {
+        return  {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -34,7 +35,7 @@ def amazonasregion(texto, number):
             }
         }
     elif  "3" in texto:
-        data = {
+        return  {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -45,7 +46,7 @@ def amazonasregion(texto, number):
             }
         }
     elif  "4" in texto:
-        data = {
+        return  {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -56,7 +57,7 @@ def amazonasregion(texto, number):
             }
         }
     elif  "5" in texto:
-        data = {
+        return  {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -67,7 +68,7 @@ def amazonasregion(texto, number):
             }
         }
     elif  "6" in texto:
-        data = {
+        return  {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -78,7 +79,7 @@ def amazonasregion(texto, number):
             }
         }
     elif  "7" in texto:
-        data = {
+        return  {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -89,7 +90,7 @@ def amazonasregion(texto, number):
             }
         }
     elif  "8" in texto:
-        data = {
+        return  {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -100,7 +101,7 @@ def amazonasregion(texto, number):
             }
         }
     else:
-        data = {
+        return  {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -111,4 +112,3 @@ def amazonasregion(texto, number):
             }
         }
 
-    return data

@@ -1,7 +1,7 @@
 def amazonasregion(texto, number):
     
     if  "btnamazonia" in texto:
-        return {
+        data ={
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -13,6 +13,7 @@ def amazonasregion(texto, number):
                         "5️⃣. Fauna 🐉\n6️⃣. Video sobre la región ⏯️\n7️⃣. Clima 🌤️\n8️⃣. Relieve 🏔️"
             }
         }
+        return data 
     # if  "1" in texto:
     #     return  {
     #         "messaging_product": "whatsapp",

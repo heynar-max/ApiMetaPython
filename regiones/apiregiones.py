@@ -1,7 +1,14 @@
-from regiones import amazonasregion
+
+
+
+from regiones.amazonasregion import amazonasregion
+
+
+from regiones.amazonasregion import amazonasregion
 
 
 def apiregiones(texto, number):
+    
     if "btnsi" in texto:
         return {
             "messaging_product": "whatsapp",
@@ -68,28 +75,28 @@ def apiregiones(texto, number):
                 }
             }
         }
-    if "btnamazonia" in texto:
+    elif "btnamazonia" in texto:
         # Llamar a la función ApiRegiones o devolver el mensaje correspondiente
         return amazonasregion(texto, number)
         
-    elif "btnandina" in texto:
-        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return amazonasregion(texto, number)
+    # elif "btnandina" in texto:
+    #     # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+    #     return amazonasregion(texto, number)
     
-    elif "btncaribe" in texto:
-        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return amazonasregion(texto, number)
+    # elif "btncaribe" in texto:
+    #     # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+    #     return amazonasregion(texto, number)
     
-    elif "btninsular" in texto:
-        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return amazonasregion(texto, number)
+    # elif "btninsular" in texto:
+    #     # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+    #     return amazonasregion(texto, number)
     
-    elif "btnorinoquia" in texto:
-        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return amazonasregion(texto, number)
+    # elif "btnorinoquia" in texto:
+    #     # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+    #     return amazonasregion(texto, number)
     
-    elif "btnpacifica" in texto:
-        # Llamar a la función ApiFlora o devolver el mensaje correspondiente
-        return amazonasregion(texto, number)
+    # elif "btnpacifica" in texto:
+    #     # Llamar a la función ApiFlora o devolver el mensaje correspondiente
+    #     return amazonasregion(texto, number)
     
         

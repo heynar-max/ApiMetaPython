@@ -130,7 +130,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "🚀 Hola, ¿Cómo estás? Bienvenido."
+                "body": "🚀 Hola, ¿Cómo estás? Bienvenido. escribe BOTON para mas opciones"
             }
         }
     elif "1" in texto:
@@ -209,7 +209,7 @@ def enviar_mensajes_whatsapp(texto,number):
                 "body": "La región tiene un clima tropical húmedo, con altas precipitaciones y temperaturas calurosas."
             }
         }
-    elif "0" in texto:
+    elif "8" in texto:
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
@@ -277,32 +277,32 @@ def enviar_mensajes_whatsapp(texto,number):
                                 {
                                     "id": "btnamazonia",
                                     "title": "Región Amazónica",
-                                    "description": "Región Amazónica."
+                                    
                                 },
                                 {
                                     "id": "btnandina",
                                     "title": "Región Andina",
-                                    "description": "Región Andina."
+                                    
                                 },
                                 {
                                     "id": "btncaribe",
                                     "title": "Región Caribe",
-                                    "description": "Región Caribe."
+                                    
                                 },
                                 {
                                     "id": "btninsular",
                                     "title": "Región Insular",
-                                    "description": "Región Insular."
+                                    
                                 },
                                 {
                                     "id": "btnorinoquia",
                                     "title": "Región Orinoquia",
-                                    "description": "Región Orinoquia."
+                                    
                                 },
                                 {
                                     "id": "btnpacifica",
                                     "title": "Región Pacifica",
-                                    "description": "Región Pacifica."
+                                    
                                 },
                             ]
                         },
@@ -361,77 +361,7 @@ def enviar_mensajes_whatsapp(texto,number):
         }
         }
 
-    elif "lista" in texto:
-        data ={
-            "messaging_product": "whatsapp",
-            "to": number,
-            "type": "interactive",
-            "interactive":{
-                "type" : "list",
-                "body": {
-                    "text": "Selecciona Alguna Opción"
-                },
-                "footer": {
-                    "text": "Selecciona una de las opciones para poder ayudarte"
-                },
-                "action":{
-                    "button":"Ver Opciones",
-                    "sections":[
-                        {
-                            "title":"Compra y Venta",
-                            "rows":[
-                                {
-                                    "id":"btncompra",
-                                    "title" : "Comprar",
-                                    "description": "Compra los mejores articulos de tecnologia"
-                                },
-                                {
-                                    "id":"btnvender",
-                                    "title" : "Vender",
-                                    "description": "Vende lo que ya no estes usando"
-                                }
-                            ]
-                        },{
-                            "title":"Distribución y Entrega",
-                            "rows":[
-                                {
-                                    "id":"btndireccion",
-                                    "title" : "Local",
-                                    "description": "Puedes visitar nuestro local."
-                                },
-                                {
-                                    "id":"btnentrega",
-                                    "title" : "Entrega",
-                                    "description": "La entrega se realiza todos los dias."
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        }
-    elif "btncompra" in texto:
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "text",
-            "text": {
-                "preview_url": False,
-                "body": "Los mejos articulos top en ofertas."
-            }
-        }
-    elif "btnvender" in texto:
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "text",
-            "text": {
-                "preview_url": False,
-                "body": "Excelente elección."
-            }
-        }
+
     elif "btnamazonia" in texto:
         data = {
             "messaging_product": "whatsapp",
@@ -443,17 +373,6 @@ def enviar_mensajes_whatsapp(texto,number):
                 "body": "🌿 *La Región Amazónica* 🌿 \n\n📌 Por favor, ingresa un número #️⃣ para recibir información:\n\n"
                         "1️⃣. Información Región Amazónica ❔\n2️⃣. Ubicación 📍 (PDF)\n3️⃣. Departamentos 📄\n4️⃣. Flora 🌿\n"
                         "5️⃣. Fauna 🐉\n6️⃣. Video sobre la región ⏯️\n7️⃣. Clima 🌤️\n8️⃣. Relieve 🏔️"
-            }
-        }
-    else:
-        data={
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "text",
-            "text": {
-                "preview_url": False,
-                "body": "🚀 Hola, visita mi web heso doks.com para más información.\n \n📌Por favor, ingresa un número #️⃣ para recibir información.\n \n1️⃣. Información del Curso. ❔\n2️⃣. Ubicación del local. 📍\n3️⃣. Enviar temario en PDF. 📄\n4️⃣. Audio explicando curso. 🎧\n5️⃣. Video de Introducción. ⏯️\n6️⃣. Hablar con AnderCode. 🙋‍♂️\n7️⃣. Horario de Atención. 🕜 \n0️⃣. Regresar al Menú. 🕜"
             }
         }
 

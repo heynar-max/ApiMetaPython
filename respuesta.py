@@ -6,7 +6,7 @@ from regiones.apiregiones import apiregiones
 def generar_respuesta(texto, number):
     
     if "boton" in texto:
-        data ={
+        return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
@@ -39,7 +39,7 @@ def generar_respuesta(texto, number):
                 }
             }
         }
-        return data       
+    
     elif "btnsi" in texto:
         # Llamar a la función ApiRegiones o devolver el mensaje correspondiente
         return apiregiones(texto, number)

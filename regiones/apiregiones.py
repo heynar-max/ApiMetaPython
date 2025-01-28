@@ -1,5 +1,4 @@
 
-from regiones.amazonasregion import amazonasregion
 
 from amazonasregion import amazonasregion
 

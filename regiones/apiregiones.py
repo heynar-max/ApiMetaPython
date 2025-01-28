@@ -1,5 +1,4 @@
-from regiones import amazonasregion
-
+from amazonasregion import amazonasregion
 
 def apiregiones(texto, number):
     

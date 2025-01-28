@@ -362,6 +362,126 @@ def enviar_mensajes_whatsapp(texto,number):
         }
 
 
+    elif "flono" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+        "to": number,
+        "type": "interactive",
+        "interactive": {
+            "type": "button",
+            "body": {
+                "text": "Te gustaria conocer la fauna colombiana?"
+            },
+            "footer": {
+                "text": "Selecciona una de las opciones"
+            },
+            "action": {
+                "buttons": [
+                    {
+                        "type": "reply",
+                        "reply": {
+                            "id": "fausi",
+                            "title": "Si"
+                        }
+                    },
+                    {
+                        "type": "reply",
+                        "reply": {
+                            "id": "fauno",
+                            "title": "No"
+                        }
+                    },
+                    {
+                        "type": "reply",
+                        "reply":{
+                            "id":"fina",
+                            "title":"Finalizar"
+                        }
+                    }
+                ]
+            }
+        }
+        }
+    elif "fauno" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "to": number,
+            "type": "interactive",
+            "interactive": {
+                "type": "button",
+                "body": {
+                    "text": "Te gustaria saber que climas tiene colombia?"
+                },
+                "footer": {
+                    "text": "Selecciona una de las opciones"
+                },
+                "action": {
+                    "buttons": [
+                        {
+                            "type": "reply",
+                            "reply": {
+                                "id": "clisi",
+                                "title": "Si"
+                            }
+                        },
+                        {
+                            "type": "reply",
+                            "reply": {
+                                "id": "clino",
+                                "title": "No"
+                            }
+                        },
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"fina",
+                                "title":"Finalizar"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    elif "clino" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "to": number,
+            "type": "interactive",
+            "interactive": {
+                "type": "button",
+                "body": {
+                    "text": "Te gustaria saber que relieve tiene colombia?"
+                },
+                "footer": {
+                    "text": "Selecciona una de las opciones"
+                },
+                "action": {
+                    "buttons": [
+                        {
+                            "type": "reply",
+                            "reply": {
+                                "id": "relsi",
+                                "title": "Si"
+                            }
+                        },
+                        {
+                            "type": "reply",
+                            "reply": {
+                                "id": "finalizar",
+                                "title": "No"
+                            }
+                        },
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"fina",
+                                "title":"Finalizar"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
     elif "btnamazonia" in texto:
         data = {
             "messaging_product": "whatsapp",

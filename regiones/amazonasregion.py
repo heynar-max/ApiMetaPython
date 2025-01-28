@@ -1,5 +1,6 @@
 def amazonasregion(texto, number):
     
+    if  "btnamazonia" in texto:
         return {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",

@@ -71,9 +71,22 @@ def apiregiones(texto, number):
                 }
             }
         }
-    elif "btnamazonia" in texto:
-        # Llamar a la función ApiRegiones o devolver el mensaje correspondiente
-        return amazonasregion(texto, number)
+    if  "btnamazonia" in texto:
+        return {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "🌿 *La Región Amazónica* 🌿 \n\n📌 Por favor, ingresa un número #️⃣ para recibir información:\n\n"
+                        "1️⃣. Información Región Amazónica ❔\n2️⃣. Ubicación 📍 (PDF)\n3️⃣. Departamentos 📄\n4️⃣. Flora 🌿\n"
+                        "5️⃣. Fauna 🐉\n6️⃣. Video sobre la región ⏯️\n7️⃣. Clima 🌤️\n8️⃣. Relieve 🏔️"
+            }
+        }
+    # elif "btnamazonia" in texto:
+    #     # Llamar a la función ApiRegiones o devolver el mensaje correspondiente
+    #     return amazonasregion(texto, number)
         
     # elif "btnandina" in texto:
     #     # Llamar a la función ApiFlora o devolver el mensaje correspondiente

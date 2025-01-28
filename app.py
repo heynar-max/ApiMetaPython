@@ -141,19 +141,17 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                "body": "La región Amazónica de Colombia, o Amazonía, comprende cerca del 40% del territorio colombiano y es la zona menos poblada del país."
             }
         }
     elif "2" in texto:
         data = {
             "messaging_product": "whatsapp",
+            "recipient_type": "individual",
             "to": number,
-            "type": "location",
-            "location": {
-                "latitude": "3.429954100205143",
-                "longitude": "-76.54103829003456",
-                "name": "Pascual Guerrero",
-                "address": "san fernado cali"
+            "type": "image",
+            "image": {
+                "link": "https://i.pinimg.com/736x/1d/eb/b4/1debb497f6cc3f367bc21a6f415ca11d.jpg"
             }
         }
     elif "3" in texto:
@@ -161,29 +159,32 @@ def enviar_mensajes_whatsapp(texto,number):
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
-            "type": "document",
-            "document": {
-                    "link": "https://www.turnerlibros.com/wp-content/uploads/2021/02/ejemplo.pdf",
-                    "caption": "Temario del Curso #001"
-                }
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "Cubre los departamentos de Amazonas, Caquetá, Guainía, Guaviare, Putumayo y Vaupés."
+            }
             }
     elif "4" in texto:
         data={
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
-            "type": "audio",
-            "audio": {
-                "link": "https://filesamples.com/samples/audio/mp3/sample1.mp3"
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "Itahuba, Caricari, Tajibos, Cedro, Cuta barcina, Reyna Victoria amazónica, Orquídeas, entre otros."
             }
         }
     elif "5" in texto:
         data = {
             "messaging_product": "whatsapp",
+            "recipient_type": "individual",
             "to": number,
+            "type": "text",
             "text": {
-                "preview_url": True,
-                "body": "Introduccion  https://www.youtube.com/watch?v=7M56JNzPH54&t=131s&ab_channel=HeynarSotoHolguin"
+                "preview_url": False,
+                "body": "Jaguares, perezosos, delfines de río, guacamayos, anacondas, ranas de cristal, entre otros."
             }
         }
     elif "6" in texto:
@@ -193,8 +194,8 @@ def enviar_mensajes_whatsapp(texto,number):
             "to": number,
             "type": "text",
             "text": {
-                "preview_url": False,
-                "body": "🤝 En breve me pondre en contacto contigo. 🤓"
+                "preview_url": True,
+                "body": "🎥 Mira este video: https://www.youtube.com/watch?v=2uQ0BzI1rVI&ab_channel=DiscosElDorado"
             }
         }
     elif "7" in texto:
@@ -205,7 +206,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "📅 Horario de Atención : Lunes a Viernes. \n🕜 Horario : 9:00 am a 5:00 pm 🤓"
+                "body": "La región tiene un clima tropical húmedo, con altas precipitaciones y temperaturas calurosas."
             }
         }
     elif "0" in texto:
@@ -216,7 +217,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "🚀 Hola, visita mi web heso doks.com para más información.\n \n📌Por favor, ingresa un número #️⃣ para recibir información.\n \n1️⃣. Información del Curso. ❔\n2️⃣. Ubicación del local. 📍\n3️⃣. Enviar temario en PDF. 📄\n4️⃣. Audio explicando curso. 🎧\n5️⃣. Video de Introducción. ⏯️\n6️⃣. Hablar con AnderCode. 🙋‍♂️\n7️⃣. Horario de Atención. 🕜 \n0️⃣. Regresar al Menú. 🕜"
+                "body": "El relieve está formado por montañas, llanuras, selvas, ríos y cuevas."
             }
         }
     elif "boton" in texto:
@@ -439,7 +440,9 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "Excelente elección."
+                "body": "🌿 *La Región Amazónica* 🌿 \n\n📌 Por favor, ingresa un número #️⃣ para recibir información:\n\n"
+                        "1️⃣. Información Región Amazónica ❔\n2️⃣. Ubicación 📍 (PDF)\n3️⃣. Departamentos 📄\n4️⃣. Flora 🌿\n"
+                        "5️⃣. Fauna 🐉\n6️⃣. Video sobre la región ⏯️\n7️⃣. Clima 🌤️\n8️⃣. Relieve 🏔️"
             }
         }
     else:

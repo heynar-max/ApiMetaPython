@@ -23,6 +23,10 @@ with app.app_context():
     db.create_all()
 
 
+
+    # Registrar rutas del controlador
+app.register_blueprint(webhook)
+
 #Funcion para ordenar los registros por fecha y hora
 def ordenar_por_fecha_y_hora(registros):
     return sorted(registros, key=lambda x: x.fecha_y_hora,reverse=True)
@@ -507,8 +511,6 @@ def enviar_mensajes_whatsapp(texto,number):
     finally:
         connection.close()
 
-    # Registrar rutas del controlador
-app.register_blueprint(webhook)
 
 if __name__=="__main__":
     app.run(host='0.0.0.0',port=80,debug=True)

@@ -7,8 +7,16 @@ from respuesta import generar_respuesta
 
 TOKEN_HESODOKS = "HESODOKS"
 
+mensajes_log = []
+
+#Funcion para agregar mensajes y guardar en la base de datos
 def agregar_mensajes_log(texto):
+    mensajes_log.append(texto)
+
+    # Convertir el dict a una cadena JSON
     texto_json = json.dumps(texto, ensure_ascii=False)
+
+    # Guardar el mensaje en la base de dato
     nuevo_registro = Log(texto=texto_json)
     db.session.add(nuevo_registro)
     db.session.commit()

@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import json
-import http.client
 from controller import webhook
 
 app = Flask(__name__)
@@ -39,79 +38,6 @@ def index():
     registros_ordenados = ordenar_por_fecha_y_hora(registros)
     return render_template('index.html',registros=registros_ordenados)
 
-mensajes_log = []
-
-#Funcion para agregar mensajes y guardar en la base de datos
-def agregar_mensajes_log(texto):
-    mensajes_log.append(texto)
-    
-    # Convertir el dict a una cadena JSON
-    texto_json = json.dumps(texto, ensure_ascii=False)
-
-    # Guardar el mensaje en la base de datos
-    nuevo_registro = Log(texto=texto_json)
-    db.session.add(nuevo_registro)
-    db.session.commit()
-
-#Token de verificacion para la configuracion
-TOKEN_HESODOKS = "HESODOKS"
-
-
-def verificar_token(req):
-    token = req.args.get('hub.verify_token')
-    challenge = req.args.get('hub.challenge')
-
-    if challenge and token == TOKEN_HESODOKS:
-        return challenge
-    else:
-        return jsonify({'error':'Token Invalido'}),401
-    
-
-def recibir_mensajes(req):
-    try:
-        req = request.get_json()
-        entry =req['entry'][0]
-        changes = entry['changes'][0]
-        value = changes['value']
-        objeto_mensaje = value['messages']
-
-        if objeto_mensaje:
-            messages = objeto_mensaje[0]
-
-            if "type" in messages:
-                tipo = messages["type"]
-                
-                #guardar log en la BD
-                agregar_mensajes_log(json.dumps(messages))
-
-                if tipo == "interactive":
-                    tipo_interactivo = messages["interactive"]["type"]
-
-                    if tipo_interactivo == "button_reply":
-                        text = messages["interactive"]["button_reply"]["id"]
-                        numero = messages["from"]
-
-                        enviar_mensajes_whatsapp(text,numero)
-
-                    elif tipo_interactivo == "list_reply":
-                        text = messages["interactive"]["list_reply"]["id"]
-                        numero = messages["from"]
-
-                        enviar_mensajes_whatsapp(text,numero)
-
-
-                if "text" in messages:
-                    text = messages["text"]["body"]
-                    numero = messages["from"]
-
-                    enviar_mensajes_whatsapp( text, numero )
-
-                    #guardar log en la BD
-                    agregar_mensajes_log(json.dumps (messages))
-
-        return jsonify({'message':'EVENT_RECEIVED'})
-    except Exception as e:
-        return jsonify({'message':'EVENT_RECEIVED'})
     
 
 #funcion de la logica de los mensajes
@@ -495,21 +421,6 @@ def enviar_mensajes_whatsapp(texto,number):
     #Convertir el diccionaria a formato JSON    
     data=json.dumps(data)
 
-    headers = {
-        "Content-Type" : "application/json",
-        "Authorization" : "Bearer EAAImrVwLfJkBOzGWAFeukQaohFT3Pccy6c9uNtkWJebyRY0OZACyr9xqUZAx6wZCiCV9YLk5cpateXpJdzFz3AeYN146ONW2flirF6mybyuZC26bpdZA8sZCPCEPz6iXQJeqgRdnbZC2ns0TRufGfiRTxAZAlc0MTyVscwdZCdjK6wrNarcdH2kDYRlklC36hbiJIngZDZD"
-    }
-
-    connection = http.client.HTTPSConnection("graph.facebook.com")
-
-    try:
-        connection.request("POST","/v21.0/591402320714042/messages", data, headers)
-        response = connection.getresponse()
-        print(response.status, response.reason)
-    except Exception as e:
-        agregar_mensajes_log(json.dumps(e))
-    finally:
-        connection.close()
 
 
 if __name__=="__main__":

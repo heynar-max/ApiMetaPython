@@ -1,4 +1,4 @@
-
+import json
 
 
 def generar_respuesta(texto, number):
@@ -376,3 +376,6 @@ def generar_respuesta(texto, number):
                         "5️⃣. Fauna 🐉\n6️⃣. Video sobre la región ⏯️\n7️⃣. Clima 🌤️\n8️⃣. Relieve 🏔️"
             }
         }
+
+        #Convertir el diccionaria a formato JSON    
+    data=json.dumps(data)

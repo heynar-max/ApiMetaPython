@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import json
 import http.client
+from controller import webhook
 
 app = Flask(__name__)
 
@@ -51,15 +52,6 @@ def agregar_mensajes_log(texto):
 #Token de verificacion para la configuracion
 TOKEN_HESODOKS = "HESODOKS"
 
-
-@app.route('/webhook', methods=['GET','POST'])
-def webhook():
-    if request.method == 'GET':
-        challenge = verificar_token(request)
-        return challenge
-    elif request.method == 'POST':
-        reponse = recibir_mensajes(request)
-        return reponse
 
 def verificar_token(req):
     token = req.args.get('hub.verify_token')
@@ -514,6 +506,9 @@ def enviar_mensajes_whatsapp(texto,number):
         agregar_mensajes_log(json.dumps(e))
     finally:
         connection.close()
+
+    # Registrar rutas del controlador
+app.register_blueprint(webhook)
 
 if __name__=="__main__":
     app.run(host='0.0.0.0',port=80,debug=True)

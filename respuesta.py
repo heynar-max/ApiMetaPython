@@ -2,7 +2,7 @@ import json
 
 
 def generar_respuesta(texto, number):
-    
+    texto = texto.lower()
     if "hola" in texto:
         data={
             "messaging_product": "whatsapp",

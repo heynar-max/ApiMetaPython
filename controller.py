@@ -1,5 +1,7 @@
 from flask import Blueprint, request
-from app import verificar_token, recibir_mensajes
+
+from app import recibir_mensajes, verificar_token
+
 
 webhook = Blueprint('webhook', __name__)
 
